@@ -1,4 +1,4 @@
-// 1.
+// Step1.
 const playlist = [
     {title: "Why Love", artist: "Asake", duration: "3:30", genre: "Pop"},
     {title: "Update", artist: "Burna Boy", duration: "4:27", genre: "Rock"},
@@ -9,13 +9,13 @@ const playlist = [
 ];
 console.table(playlist);
 
-// 2.
+// Step2.
 for (i = 0; i < playlist.length; i++) {
     console.log(`Now playing: ${playlist[i].title} by ${playlist[i].artist} (${playlist[i].duration}) - Genre: ${playlist[i].genre}`);
     
 }
 
-// 3.
+// Step3.
 const rockSongs = playlist.filter(function  (play) {
     return play.genre === "Rock"
 })  
@@ -28,7 +28,7 @@ const duration = playlist.filter(function (track) {
 });
 console.table(duration);
 
-// 4.
+// Step4.
 const upperCasePlaylist = playlist.map(function (play){
     return {
         title: play.title.toUpperCase(),
@@ -40,7 +40,7 @@ const upperCasePlaylist = playlist.map(function (play){
 })
 console.table(upperCasePlaylist);
 
-// 5.
+// Step5.
 function formatDuration(duration) {
     const [minutes, seconds] = duration.split(':')
 
@@ -61,7 +61,7 @@ playlist.forEach(function (song) {
     console.log(`"${song.title}" duration: ${formatDuration(song.duration)}`); 
 })
 
-// 6.
+// Step6.
 function findSong(searchTerm){
     
      // Convert the search term to lowercase
@@ -81,7 +81,7 @@ function findSong(searchTerm){
 }
 console.log(findSong("Unavailable"));
 
-// 7.
+// Step7.
 function sortPlaylist(playlist) {
     // Sort the playlist alphabetically by the title
     playlist.sort((a, b) => {
@@ -99,18 +99,20 @@ function sortPlaylist(playlist) {
   }
   console.log(sortPlaylist(playlist));
 
-//   8.
-function playRandomSong(playlist) {
+// Step8.
+function playRandomSong() {
   // Generate a random index from 0 to the length of the playlist - 1
   const randomIndex = Math.floor(Math.random() * playlist.length);
   
   // Get the random song using the random index
   const randomSong = playlist[randomIndex];
 
-  // Log the song details (you can customize what gets logged)
+  // return `Now playing: "${randomSong.title}" by ${randomSong.artist}`
   console.log(`Now playing: "${randomSong.title}" by ${randomSong.artist}`);
-}  
-console.log(`now playRandomSong: $[title] by $[artist]`);
+}; 
+playRandomSong();
+// console.log(playRandomSong());
+
 
 
 
